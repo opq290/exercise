@@ -1,0 +1,17 @@
+# include <stdio.h>
+#define LOWER 1
+#define UPPER 20
+#define STEP 1
+ double gyaku( int n);
+main()
+{
+  for (n =LOWER; n <= UPPER; n=n+STEP ){
+    printf("%d\t%d\n"n,gyaku(n);}
+      return 0;
+ }
+double gyaku( int n)
+{
+  int double p;
+  p = 1.0 /n;
+  return p;
+    }

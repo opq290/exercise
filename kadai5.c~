@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define FIRST 0
+#define OTHER 1
+
+
+main(){
+  int c,state;
+  state = OTHER;
+  c = getchar();
+  while( c != EOF){
+    if (c == ' ' || c == '\t' || c == '\n'){
+      if (state == FIRST){
+	state = OTHER;
+	break;}
+      else if (state == OTHER)
+	state =OTHER;
+    }
+    else{
+      state = FIRST;
+      c= getchar();}
+  }
+  putchar(c);
+}
+   
+      
+
+      
+    

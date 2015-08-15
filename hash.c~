@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define HASHSIZE 101
+unsigned hash(char *s);
+int main(){
+  char *s = "tokyo";
+  printf("%s = %d\n",s,hash(s));
+  return 0;
+}
+
+unsigned hash(char *s){
+  unsigned hashval;
+  for(hashval = 0; *s != '\0'; s++)
+    hashval = *s + (31 * hashval);
+  return hashval % HASHSIZE;
+}

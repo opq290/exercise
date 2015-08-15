@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LEN 100
+
+typedef struct NODE *nodeptr;
+
+typedef struct NODE{
+  int val;
+  nodeptr left;
+  nodeptr right;
+} node;
+
+void insertnode(nodeptr root,int data){
+  nodeptr first = {0,NULL,NULL};
+  nodeptr current = &first;
+  while(current->left != NULL || current->right != NULL){
+    if(data > root->val){
+      current = root->right;
+      if(current == NULL){
+	current =(nodeptr)malloc(sizeof(node));
+	current->val = data;
+	current->right = NULL;
+	current->left = NULL;
+	root->right =current;
+      }
+      else{
+	insert(current,data);
+      }
+    }
+    else{
+      current = root->left;
+      if(current == NULL){
+	 current =(nodeptr)malloc(sizeof(node));
+	 current->val = data;
+	 current->left = NULL;
+	 current->right =NULL;
+	 root ->left = current;
+      }
+      else{
+	insert (current,data);
+      }
+    }
+
+  }
+  
+}
+
+main(){
+  nodeptr root;
+  nodeptr first = {0,NULL,NULL};
+  root = {20,NULL,NULL};
+  FILE *fp = fopen("./numbers.txt",r);
+  if(!fp){
+    printf("Failed to open the file\n");
+    exit(1);
+  }
+  char buf[MAX_LEN];
+  while(fgets(buf,MAX_LEN,fp)){
+    int data = atoi(strtok(buffer,"\n"));
+    insertnode(root,data);
+  }
+
+}

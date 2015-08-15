@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+struct NODE{
+  float x;
+  float y;
+};
+
+void genrate_points(){
+  int i;
+  double r;
+  for(i = 0; i < 1000; i++){
+    r = rand()/RAND_MAX * 2 * M_PI;
+    points[i].x = sqrt(3) * cos(r);
+    points[i].y = sqrt(5) * sin(r);
+  }
+}
+
+struct NODE points[1000];
+
+
+int main(){
+  FILE *fp = fopen("points.bin","wb");
+ 
+}

@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int getdays (int,int,int);
+main(){
+  int year;
+  int month;
+  int day;
+  int totaldays, i;
+  
+  totaldays = getdays(year,month,day);
+  i = totaldays % 7;
+  switch (i){
+  case 0:
+    printf ("%d-%d-%d is a Monday\n",year,moth,day);
+     case 1:
+    printf ("%d-%d-%d is a Tuesday\n",year,moth,day);
+     case 2:
+    printf ("%d-%d-%d is a Wednesday\n",year,moth,day);
+     case 3:
+    printf ("%d-%d-%d is a Thursday\n",year,moth,day);
+     case 4:
+    printf ("%d-%d-%d is a Friday\n",year,moth,day);
+     case 5:
+    printf ("%d-%d-%d is a Saturday\n",year,moth,day);
+     case 6:
+    printf ("%d-%d-%d is a Sunday\n",year,moth,day);
+  }
+  return 1;
+}
+
+int getdays(int year, int month, int day){
+  int sum;
+  int leap,i;
+  int mothlength[12]
+  leap = 0;
+  if (((year % 4) == 0 && (year % 100 != 0)) || (year % 400) == 0){
+    sum += year * 366;
+    leap = 1;
+  }
+  else{
+    sum += year * 365;
+    leap = 0;
+  }
+  
+  switch (month){
+  case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+    monthlength[month-1] =31;
+    
+  case 2:
+    mothlength[month-1] = 28+leap;
+    
+  case 4: case 6: case 9: case 11:
+    mothlength[month-1] = 30;
+  }
+  for (i=0; i < month-1; i++){
+    sum += mothlength[i];
+  }
+  sum += day;
+  return sum;
+}

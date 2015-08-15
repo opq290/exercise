@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+ main(int argc, char *argv[]){
+
+  int length = 0;
+  float inputnumber[length];
+  int counter;
+  int i;
+  i =0;
+  for (i = 0; i < length; i++)
+  for (counter = 0; counter < argc; counter ++){
+    switch(*++argv[counter]){
+    case 'n':
+      length = atoi(argv[counter+1]);
+      printf ("length of array = %d\n",length);
+      break;
+    case 's':
+     inputnumber[i] = atof(argv[counter + 1]);
+        i++;
+    break;
+    case ',':
+      inputnumber[i] = atof(argv[counter + 1]);
+	 i++;
+    break;
+		       }
+    }
+  printf ("%d,%s\n", counter,argv[counter]);
+  for(i =0;i <length;i ++){
+  printf ("%f\n",inputnumber[i]);
+ }
+ }
+ 
+      

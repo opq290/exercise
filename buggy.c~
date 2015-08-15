@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int isLower(int);
+
+int main(){
+
+  //count[x][y] stores the no. of times we observe the letter y after letter x.
+  int count[26][26];
+
+  //initialize the count 2D array to zeros.
+  int i, j;
+  for(i = 0; i < 26; i++){
+    for(j = 0; j < 26; j++){
+      count[i][j] = 0;
+    }
+  }
+
+  // Do the counting.
+  int x, y, c;
+  x = getchar();
+  while( (c = getchar()) != EOF){
+    y = c;
+    if ((isLower(x)) && (isLower(y))){
+      count[x][y]++;
+      }
+    x = y;
+  }
+
+  //print the non-zero counts.
+  for(i = 0; i < 26; i++){
+    for(j = 0; j < 26; j++){
+      if (count[i][j] > 0){
+	printf("count[%c][%c] = %d\n", (i + 'a'), (j + 'a'), count[i][j]);
+      }
+    }
+  }
+  return 0;
+}
+
+int isLower(int c){
+  //return 1 if c is lowercase alphabet charachter.
+  if ((c != '\n') && (c != '\t') && ( c!= ' ')){
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}

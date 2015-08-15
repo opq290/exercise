@@ -1,0 +1,235 @@
+
+
+
+
+
+
+
+<!--web/decorators/main.jsp-->
+
+<html>
+<head>
+	<title>システムエラー</title>
+	<link href="css/c5_css.css" rel="stylesheet" type="text/css">
+
+	
+		
+		
+		
+		
+			<link href="css/c5_css_other.css" rel="stylesheet" type="text/css">
+		
+	
+
+</head>
+
+<body onload="">
+	
+
+
+
+
+
+
+
+
+<!--web/header.jsp-->
+<table border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="logo-area" rowspan="3" width="1%">
+			<img src="img/logo.png" border="0" alt="|">
+		</td>
+		<!--ロゴエリアのテーブル開始-->
+		<td colspan="3">
+			<img src="img/copyright.png" border="0" alt="|">
+		</td>
+	</tr>
+	<!--利用者名：種別のテーブル開始-->
+	<tr>
+		<td class="header-area">
+			<div align="left">
+				<img src="img/user.png" border="0" alt="利用者名：種別">
+				利用者名：種別
+			</div>
+		</td>
+
+		
+		
+
+		
+			
+
+			
+
+			
+				<td class="before-login-status">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			
+		
+
+		<td class="in-out" rowspan="2">
+			<!--ログインと科目選択のテーブル開始-->
+			
+				
+
+				
+					<!--ログイン-->
+					<img src="img/login.png" border="0" alt="ログイン">
+					
+					<a href="/cfive/login?action=login_form" class="in-out">ログイン</a>
+					<!-- <a href="forwarder?plugin=cfive.plugin.course.SimpleCoursePlugin" class="in-out">ログイン</a>-->
+				
+			
+		</td>
+	</tr>
+	<tr>
+		<td class="header-area" align="left">
+			<div align="left">
+				
+					&nbsp;
+					
+				
+			</div>
+		</td>
+
+		<!--コース選択の有無（選択前：空白/選択後：選択コース名と講師名）-->
+		
+			
+				<td class="before-login-status">&nbsp;</td>
+			
+			
+		
+	</tr>
+</table>
+<!--
+	$Id: header.jsp,v 1.7.10.1.4.1 2012/03/15 02:37:44 yuichi Exp $
+-->
+
+	<hr class="1_line" align="left">
+	
+
+
+
+
+
+<!--web/menu.jsp-->
+
+<table cellspacing="0" cellpadding="0">
+	<tr class="table-elements">
+		<td class="pluginmenu-area" nowrap="nowrap" align="left">
+			<img src="img/bar.png" border="0" alt="|" class="menu">
+			
+				
+					
+					
+					
+						<span class="pluginmenu-area">
+							<a href="forwarder?plugin=cfive.plugin.course.SimpleCoursePlugin" class="plugin-off">&nbsp;コース選択	&nbsp;</a>
+							<img src="img/bar.png" border=0 alt="*" class="menu">
+						</span>
+					
+				
+			
+				
+					
+					
+						<span class="plugin-on">
+							<a href="forwarder?plugin=cfive.plugin.info.InfoPlugin" class="plugin-on">&nbsp;お知らせ&nbsp;</a>
+						</span>
+						<span class="pluginmenu-area">
+							<img src="img/bar.png" border=0 alt="*" class="menu">
+						</span>
+					
+					
+				
+			
+				
+					
+					
+					
+						<span class="pluginmenu-area">
+							<a href="forwarder?plugin=cfive.plugin.faq.FaqPlugin" class="plugin-off">&nbsp;FAQ&nbsp;</a>
+							<img src="img/bar.png" border=0 alt="*" class="menu">
+						</span>
+					
+				
+			
+		</td>
+	</tr>
+</table>
+<!--
+	$Id: menu.jsp,v 1.6 2007/05/14 02:55:15 onoue Exp $
+-->
+
+	<!--web/error/system_error.jsp-->
+
+
+
+
+
+	<table>
+		<tr>
+			<td valign="top" class="body-area" colspan=2><br>
+				<h4>
+					<font color="Red">システムエラーが発生しました</font>
+				</h4>
+				<table border="1" cellspacing="0" cellpadding="0" width="700">
+					<tr>
+						<td width="500" class="table-elements">
+							管理者に問い合わせてください
+						</td>
+					</tr>
+				</table>
+				<br>
+
+				<table border="1" cellspacing="0" cellpadding="0" width="700">
+					<tr>
+						<td width="500" class="table-header">
+							エラー内容
+						</td>
+					</tr>
+					<tr>
+						<td width="500" class="table-elements">
+							
+							予期せぬ例外が発生しました
+							
+						</td>
+					</tr>
+				</table>
+				<br>
+			<div align="right">
+				<a href="javascript:history.back()">戻る</a>
+			</div>
+			</td>
+		</tr>
+	</table>
+	
+
+
+
+
+
+
+
+
+<!--web/footer.jsp-->
+<!--フッターエリア開始-->
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td	class="footer-area" nowrap>
+			&nbsp;&nbsp;&nbsp;<a href="http://cfive.itc.u-tokyo.ac.jp" class="footer" target="_blank">CFIVE Project</a>
+		</td>
+	</tr>
+</table>
+
+
+<!--
+	$Id: footer.jsp,v 1.9.10.1 2009/07/07 05:38:22 suzuki Exp $
+-->
+
+</body>
+</html>
+<!--
+	$Id: main.jsp,v 1.3.14.1 2012/03/15 02:37:45 yuichi Exp $
+-->

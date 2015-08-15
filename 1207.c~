@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct WORD{
+  char wstr[1000];
+  int freq;
+  struct WORD *next;
+};
+ 
+
+  int main(){
+    FILE *fp;
+    fp = fopen("news.txt","r");
+    struct WORD first = {" ",0,NULL};
+    struct WORD *current = &first;
+    
+    int i,c;
+    int currentchar = 0;
+    char buffer[1000];
+    
+    while ((c = getc(fp)) != EOF){
+      if ((c == ' ')||(c == '\t')||(c == '\n')){
+	buffer[currentchar] = '\0';
+	currentchar = 0;
+	for (current = &first; current->next != NULL; current = current->next){ 
+    
+	  if (strcmp(current->wstr,buffer) == 0){
+	    (current->freq)++;
+	    break;
+	  }
+	  else{
+	    current->next = (struct WORD *)malloc(sizeof(struct WORD));
+	    current = current->next;
+	    strcpy(current->wstr, buffer);
+	    current->freq =1;
+	  }
+	}
+      }
+      else{
+	buffer[currentchar] = c;
+	currentchar++;
+      }
+      
+    }
+   for (current = &first; current->next != NULL; current = current->next){
+     printf("%d\n",current->freq);
+  }
+  }
+
+    
+    
+  

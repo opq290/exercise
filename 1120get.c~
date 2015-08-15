@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+main(int argc, char *argc[]){
+  int length = 0;
+  float inputnumber[length];
+  int c;
+  int i;
+  while((c = getopt(argc,argv,"n:s:,:")) != -1){
+    switch(c){
+    case 'n':
+      length = atoi(optarg);
+      break;
+    case 's':
+      inputnumber[i] = atof(optarg);
+      i += ;
+      break;
+    case ',':
+      

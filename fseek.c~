@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  FILE *fp = fopen("news.txt","rb");
+  int count = 0;
+  char s;
+  while(fseek(fp,-sizeof(char)*(count + 1), SEEK_END)){
+    fread( &s, sizeof(char), 1, fp);
+    printf("%c\n",s);
+  }
+  fclose(fp);
+  return 0;
+}
+    
+    
